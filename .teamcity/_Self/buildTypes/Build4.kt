@@ -6,6 +6,10 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 object Build4 : BuildType({
     name = "build 4"
 
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
     params {
         param("a", "")
     }
@@ -13,9 +17,6 @@ object Build4 : BuildType({
     steps {
         script {
             scriptContent = """echo "param a=%a%""""
-            param("org.jfrog.artifactory.selectedDeployableServer.downloadSpecSource", "Job configuration")
-            param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
-            param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
-        }
+       }
     }
 })
