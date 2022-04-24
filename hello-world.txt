@@ -1,2 +1,2 @@
-echo Hello, world
-echo Something else
+echo Hello, world!
+echo something else
