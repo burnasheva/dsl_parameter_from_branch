@@ -12,6 +12,11 @@ object TriggerBuild : BuildType({
 
     vcs {
         root(DslContext.settingsRoot)
+
+        branchFilter = """
+            +:*
+            -:<default>
+        """.trimIndent()
     }
 
     dependencies {
