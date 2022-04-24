@@ -21,10 +21,4 @@ object Build : BuildType({
         }
     }
 
-
-    triggers {
-        vcs {
-            perCheckinTriggering = true
-        }
-    }
 })
