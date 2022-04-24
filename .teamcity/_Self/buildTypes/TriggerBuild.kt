@@ -1,6 +1,7 @@
 package _Self.buildTypes
 
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 object TriggerBuild : BuildType({
     name = "trigger build"
@@ -19,6 +20,15 @@ object TriggerBuild : BuildType({
         snapshot(Build2) {
         }
         snapshot(Build4) {
+        }
+    }
+
+    triggers {
+        vcs {
+            perCheckinTriggering = true
+            buildParams {
+                param("reverse.dep.*.a", "a's overridden value (head + branch + trigger's customization)")
+            }
         }
     }
 })
