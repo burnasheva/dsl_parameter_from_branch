@@ -6,7 +6,7 @@ object TriggerBuild : BuildType({
     name = "trigger build"
 
     params {
-        param("reverse.dep.*.a", "a's overridden value (from head)")
+        param("reverse.dep.*.a", "a's overridden value (from head, the value differs in branch)")
     }
 
     vcs {
