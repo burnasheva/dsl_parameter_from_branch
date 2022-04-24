@@ -15,6 +15,7 @@ object TriggerBuild : BuildType({
 
         branchFilter = """
             +:*
+            -:<default>
         """.trimIndent()
     }
 
